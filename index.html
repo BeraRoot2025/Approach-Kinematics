@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>街头社交综合实验室 · Street Social Science Lab (Master Edition)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-base: #0A0E14;
+  --bg-panel: rgba(16, 23, 34, 0.88);
+  --bg-card: rgba(22, 31, 46, 0.82);
+  --bg-input: rgba(10, 14, 20, 0.92);
+  --border-subtle: rgba(34, 211, 238, 0.18);
+  --border-glow: rgba(34, 211, 238, 0.45);
+  --text-main: #E6EDF3;
+  --text-muted: #8B93A3;
+  --cyan: #22D3EE;
+  --cyan-dim: rgba(34, 211, 238, 0.15);
+  --gold: #F5B942;
+  --gold-dim: rgba(245, 185, 66, 0.16);
+  --crimson: #F43F5E;
+  --crimson-dim: rgba(244, 63, 94, 0.18);
+  --emerald: #10B981;
+  --font-serif: 'Noto Serif SC', serif;
+  --font-sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 0 18px rgba(34, 211, 238, 0.04);
+}
+
+[data-theme="light"] {
+  --bg-base: #F4F1EA;
+  --bg-panel: rgba(255, 253, 248, 0.92);
+  --bg-card: rgba(249, 246, 238, 0.9);
+  --bg-input: #FFFFFF;
+  --border-subtle: rgba(14, 116, 144, 0.2);
+  --border-glow: rgba(14, 116, 144, 0.5);
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --cyan: #0891B2;
+  --cyan-dim: rgba(8, 145, 178, 0.12);
+  --gold: #D97706;
+  --gold-dim: rgba(217, 119, 6, 0.12);
+  --crimson: #E11D48;
+  --crimson-dim: rgba(225, 29, 72, 0.12);
+  --emerald: #059669;
+  --shadow-card: 0 6px 24px rgba(15, 23, 42, 0.07), inset 0 0 12px rgba(8, 145, 178, 0.03);
+}
+
+[data-cb="true"] {
+  --cyan: #38BDF8;
+  --crimson: #FB923C;
+  --gold: #FACC15;
+  --emerald: #60A5FA;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#bg-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.top-bus-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-panel);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 8px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.brand-block { display: flex; align-items: center; gap: 10px; }
+.brand-badge {
+  width: 30px; height: 30px; border-radius: 6px;
+  background: linear-gradient(135deg, var(--cyan), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-weight: 700; color: #0A0E14; font-size: 13px;
+}
+.brand-title { font-family: var(--font-serif); font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+.ethics-pill {
+  font-size: 11px; padding: 2px 8px; border-radius: 99px;
+  background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold); font-weight: 500;
